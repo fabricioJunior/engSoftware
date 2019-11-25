@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".menuADM">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="29dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="306dp"
+                android:layout_height="49dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/definicoes" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:baselineAligned="false"
+                android:text="PERFIL ADMINISTRATIVO"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="63dp" />
+
+            <Button
+                android:id="@+id/cadastrarUsuarioButton"
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Cadastrar usuário"
+
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/atualizarUsuarioButton"
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Atualizar Usuário"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buscarADMUsuarioButton"
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Buscar Usuário"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cadastrarVacinaButton"
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Cadastrar vacina"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/atualizarVacinaButton"
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Atualizar Vacina"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buscarVacinaButton"
+                android:layout_width="277dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Buscar Vacina"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/sairADMButton"
+                android:layout_width="103dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="129dp"
+                android:layout_marginLeft="129dp"
+                android:layout_marginEnd="128dp"
+                android:layout_marginRight="128dp"
+                android:layout_marginBottom="77dp"
+                android:text="SAIR"
+                android:layout_gravity="center"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
