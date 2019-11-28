@@ -44,6 +44,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nomeVacinaTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="NOME DA VACINA:"
@@ -56,6 +57,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/codigoVacinaTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="CÓDIGO DA VACINA:"
@@ -67,6 +69,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/quantidadeTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="QUANTIDADE EM ESTOQUE:"
@@ -83,7 +86,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="ENCERRAR CADASTRO"
+                android:text="CADASTRA"
+                android:onClick="cadastraBtnClicked"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         </LinearLayout>
