@@ -60,8 +60,43 @@ public class Banco {
         return retorno;
     }
     public static  ArrayList<Vacinas> vacinas(){
-
-
+       ArrayList<Vacinas>  retorno = new ArrayList<Vacinas>();
+       Vacinas tripliceViral = new Vacinas();
+       Vacinas hepatiteB = new Vacinas();
+       Vacinas hpv = new Vacinas();
+       Vacinas tetano = new Vacinas();
+       Vacinas bcg = new Vacinas();
+       Vacinas sarampo = new Vacinas();
+       Vacinas difteria = new Vacinas();
+       tripliceViral.setCodigoVacina(1);
+       tripliceViral.setNome("Tríplice Viral");
+       tripliceViral.setQuantidade(5);
+       hepatiteB.setCodigoVacina(2);
+       hepatiteB.setNome("Hepatite B");
+       hepatiteB.setQuantidade(8);
+       hpv.setNome("HPV");
+       hpv.setCodigoVacina(3);
+       hpv.setQuantidade(48);
+       tetano.setCodigoVacina(4);
+       tetano.setNome("Tétano");
+       tetano.setQuantidade(36);
+       bcg.setCodigoVacina(5);
+       bcg.setNome("BCG");
+       bcg.setQuantidade(6);
+       sarampo.setCodigoVacina(6);
+       sarampo.setNome("Sarampo");
+       sarampo.setQuantidade(36);
+       difteria.setCodigoVacina(7);
+       difteria.setNome("Difteria");
+       difteria.setQuantidade(30);
+       retorno.add(tripliceViral);
+       retorno.add(hepatiteB);
+       retorno.add(hpv);
+       retorno.add(tetano);
+       retorno.add(bcg);
+       retorno.add(sarampo);
+       retorno.add(difteria);
+       return retorno;
     }
     public  static  void postUser(Usuario novo){
           usuarios.add(novo);
