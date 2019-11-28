@@ -11,4 +11,9 @@ public class BuscarUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_usuario);
     }
+
+    public void entraBtnClick(android.view.View args){
+
+
+    }
 }
