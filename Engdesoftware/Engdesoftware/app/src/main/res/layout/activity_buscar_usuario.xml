@@ -35,40 +35,55 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:text="CPF:"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:id="@+id/textView19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <SearchView
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cpfTxt"
+                android:hint="CPF"
+                android:inputType="number"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <ListView
-                android:id="@+id/listViewId"
-                android:layout_width="match_parent"
-                android:layout_height="308dp"
-                android:addStatesFromChildren="false"
-                android:fadingEdge="vertical"
-                android:footerDividersEnabled="false"
-                android:headerDividersEnabled="false"
-                android:scrollbars="vertical"
-                tools:visibility="visible">
-
-            </ListView>
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent"/>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@id/confirmaBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="BUSCA"
+                android:onClick="buscaUsuarioBtnClicked"
+                />
+            <TextView
+                android:id="@+id/nomeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOME:"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:visibility="invisible"
+                />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nomeTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:text="VOLTAR"
-                android:textStyle="bold" />
-
+                android:visibility="invisible"
+                android:enabled="false"
+                />
+            <Button
+                android:id="@+id/confirmaBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="CONFIRMA"
+                android:visibility="invisible"
+                android:onClick="confirmaBtnClicked"
+                />
         </LinearLayout>
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

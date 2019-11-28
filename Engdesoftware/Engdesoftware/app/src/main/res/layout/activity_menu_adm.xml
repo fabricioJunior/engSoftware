@@ -50,8 +50,8 @@
                 android:layout_width="277dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:onClick="cadastraUsuarioBtnClick"
                 android:text="Cadastrar usuário"
-
                 android:textStyle="bold" />
 
             <Button
@@ -60,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Atualizar Usuário"
+                android:onClick="atualizarUsuarioBtnClick"
                 android:textStyle="bold" />
 
             <Button
@@ -68,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Buscar Usuário"
+                android:onClick="buscaUsuarioBtnClick"
                 android:textStyle="bold" />
 
             <Button
@@ -75,6 +77,7 @@
                 android:layout_width="277dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:onClick="cadastraVacinaBtn"
                 android:text="Cadastrar vacina"
                 android:textStyle="bold" />
 
@@ -84,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Atualizar Vacina"
+                android:onClick="atualizarVacinaBtnClick"
                 android:textStyle="bold" />
 
             <Button
@@ -92,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Buscar Vacina"
+                android:onClick="buscaVacinaBtnClicked"
                 android:textStyle="bold" />
 
             <Button
@@ -104,6 +109,7 @@
                 android:layout_marginRight="128dp"
                 android:layout_marginBottom="77dp"
                 android:text="SAIR"
+                android:onClick="sairBtnClicked"
                 android:layout_gravity="center"
                 android:textStyle="bold" />
 

@@ -31,8 +31,8 @@
                 android:layout_gravity="center"
                 android:baselineAligned="false"
                 android:text="CADASTRO DO PACIENTE"
-                android:textStyle="bold"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView19"
@@ -52,9 +52,11 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nomeCompletoTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="NOME COMPLETO:"
+                    android:inputType="textPersonName"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -64,9 +66,11 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cpfTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="CPF:"
+                    android:inputType="number"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,9 +79,11 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nomeCompletoPaiTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="NOME COMPLETO DO PAI:"
+                    android:inputType="textPersonName"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -86,43 +92,33 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nomeCompletoMaeTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="NOME COMPLETO DA MÃE:"
+                    android:inputType="textPersonName"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/contemAlergiaBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Contem alguma alergia ?" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="CONTÉM ALGUMA ALERGIA?"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="match_parent"
+                    android:text="TIPO SANGUINEO" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.textfield.TextInputEditText
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/tipoSangueBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="CONTÉM ALGUMA DOENÇA?"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="TIPO SANGUÍNEO:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    android:layout_height="match_parent" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,6 +127,7 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/historicoFamiliarTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="HISTÓRIO FAMILIAR DE DOENÇA:"
@@ -143,40 +140,45 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/telefoneTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="TELEFONE:"
+                    android:inputType="phone"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.textfield.TextInputEditText
+                android:layout_height="match_parent"/>
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="ESTADO CIVIL:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="match_parent"
+                    android:text="ESTADO CIVIL:"/>
 
+            <Spinner
+                android:id="@+id/estadoCivilBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ENDEREÇO:"
-                android:textStyle="bold"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/estadoTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="ESTADO:"
+                    android:inputType="textPostalAddress"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -185,9 +187,11 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cidadeTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="CIDADE:"
+                    android:inputType="textPostalAddress"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -196,9 +200,11 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ruaTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="RUA:"
+                    android:inputType="textPostalAddress"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -207,9 +213,11 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/numeroResidenciaTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="NÚMERO DA RESIDÊNCIA:"
+                    android:inputType="number"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -218,7 +226,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="ENCERRAR CADASTRO"
+                android:onClick="cadastraBtnClicked"
+                android:text="CADASTRA"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         </LinearLayout>

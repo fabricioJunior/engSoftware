@@ -13,7 +13,9 @@ import android.widget.Toast;
 import com.example.engdesoftware.BancoFK.Banco;
 import com.example.engdesoftware.Models.Usuario;
 import com.example.engdesoftware.Utils.UsuarioConectado;
+import com.example.engdesoftware.Utils.Utils;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Banco.loadDb();
         entraBtn = findViewById(R.id.entrarButton);
         entraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
     public void entraBtnClick(View view) {
 
         if (loginTxt.getText().toString() == "") {
-            menssagemAoUsuario("Por favor digite o seu login", "ERRO");
+            Utils.menssagemAoUsuario("Por favor digite o seu login", "ERRO", this);
             return;
         }
         if (senhaTxt.getText().toString().equals("")) {
-            menssagemAoUsuario("Por favor digite sua senha", "ERRO");
+            Utils.menssagemAoUsuario("Por favor digite sua senha", "ERRO", this);
             return;
         }
         Usuario login = loginCorreto(loginTxt.getText().toString(), senhaTxt.getText().toString());
         if (login == null) {
-            menssagemAoUsuario("Usuário ou senha incorretos", "Falha no login");
+            Utils.menssagemAoUsuario("Usuário ou senha incorretos", "Falha no login", this);
         } else {
             UsuarioConectado.USER = login;
             if (login.isAdm()) {
@@ -77,23 +79,5 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-    private void menssagemAoUsuario(String mensagem, String titulo) {
-        AlertDialog alerta;
-        //Cria o gerador do AlertDialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        //define o titulo
-        builder.setTitle(titulo);
-        //define a mensagem
-        builder.setMessage(mensagem);
-        //define um botão como positivo
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface arg0, int arg1) {
-                Toast.makeText(MainActivity.this, "positivo=" + arg1, LENGTH_SHORT).show();
-            }
-        });
-        //cria o AlertDialog
-        alerta = builder.create();
-        //Exibe
-        alerta.show();
-    }
+
 }

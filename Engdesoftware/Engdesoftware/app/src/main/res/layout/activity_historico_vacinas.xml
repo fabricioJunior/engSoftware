@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content" />
 
             <ListView
-                android:id="@+id/listViewId"
+                android:id="@+id/buscaUser"
                 android:layout_width="match_parent"
                 android:layout_height="308dp"
                 android:addStatesFromChildren="false"
