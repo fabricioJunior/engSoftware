@@ -2,7 +2,9 @@ package com.example.engdesoftware.Models;
 
 import com.example.engdesoftware.BancoFK.Banco;
 
-public class Usuario {
+import java.util.ArrayList;
+
+public class Usuario extends  Banco{
     private String cpf;
     private String nome_completo;
     private String nome_completo_pai;
@@ -22,20 +24,32 @@ public class Usuario {
     private boolean isAdm;
 
 
+    public static Usuario getUser(String cpf){
+         return Banco.getUser(cpf);
+    }
     public boolean postUser() {
         try {
-            Banco.postUser(this);
+            postUser(this);
+            return  true;
         } catch (Exception ex) {
-
+            return false;
         }
-        return false;
+
     }
 
     ///No lugar da condição incrementa metodo de GET(API)
-    public boolean loginCorreto(String login, String senha) {
-        return this.login.equals(login) && this.senha.equals(senha);
+    public static Usuario loginCorreto(String login, String senha) {
+        for(Usuario user: Banco.getUsuarios()){
+            if( user.getLogin().equals(login) && user.getSenha().equals(senha)){
+                return  user;
+            }
+        }
+        return null;
     }
 
+    public  ArrayList<Vacinacao> getVacinacaos(){
+        return  getVacinacaos(this);
+    }
     public String getLogin() {
         return login;
     }
@@ -173,6 +187,6 @@ public class Usuario {
         if (x == null || x.getClass() != this.getClass()) {
             return false;
         }
-        return getCpf().equals(((Usuario) x).getCpf());
+        return cpf.equals(((Usuario) x).getCpf());
     }
 }

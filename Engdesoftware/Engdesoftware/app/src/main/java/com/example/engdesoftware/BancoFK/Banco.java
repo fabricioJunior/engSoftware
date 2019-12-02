@@ -16,13 +16,15 @@ public class Banco {
     private static ArrayList<Sangue> sangues;
     private static ArrayList<Vacinas> vacinas;
     private static ArrayList<Vacinacao> vacinacaos;
+
     public static void loadDb() {
         usuarios = usuarios();
         sangues = sangues();
         vacinas = vacinas();
+        vacinacaos = new ArrayList<Vacinacao>();
     }
 
-    public static ArrayList<Sangue> sangues() {
+    private static ArrayList<Sangue> sangues() {
         ArrayList<Sangue> retorno = new ArrayList<Sangue>();
         Sangue Apositivo = new Sangue();
         Apositivo.setTipoView("A+");
@@ -50,8 +52,7 @@ public class Banco {
         retorno.add(Onegativo);
         return retorno;
     }
-
-    public static ArrayList<Usuario> usuarios() {
+    private static ArrayList<Usuario> usuarios() {
         ArrayList<Usuario> retorno = new ArrayList<Usuario>();
         Usuario normal = new Usuario();
         normal.setLogin("user");
@@ -64,12 +65,15 @@ public class Banco {
         admin.setSenha("admin");
         admin.setNome_completo("Usuario admin");
         admin.setAdm(true);
+        Usuario fabricio = new Usuario();
+        fabricio.setCpf("06006528312");
+        fabricio.setNome_completo("Fabricio James Carneiro Junior");
         retorno.add(normal);
         retorno.add(admin);
+        retorno.add(fabricio);
         return retorno;
     }
-
-    public static ArrayList<Vacinas> vacinas() {
+    private static ArrayList<Vacinas> vacinas() {
         ArrayList<Vacinas> retorno = new ArrayList<Vacinas>();
         Vacinas tripliceViral = new Vacinas();
         Vacinas hepatiteB = new Vacinas();
@@ -108,35 +112,56 @@ public class Banco {
         retorno.add(difteria);
         return retorno;
     }
-
-    public static ArrayList<Vacinacao> vacincao(){
+    private static ArrayList<Vacinacao> vacincao(){
        ArrayList<Vacinacao> retorno = new ArrayList<Vacinacao>();
        return retorno;
     }
-    public static boolean postUser(Usuario novo) {
+
+
+    protected static boolean postUser(Usuario novo) {
         if (usuarios.contains(novo)) {
             return false;
         }
         usuarios.add(novo);
         return false;
     }
-
-    public static Usuario getUser(Usuario busca) {
+    protected static Usuario getUser(Usuario busca) {
         if (usuarios.contains(busca)) {
             return usuarios.get(usuarios.indexOf(busca));
         }
         return null;
     }
+    protected static Usuario getUser(String cpf) {
+        Usuario busca = new Usuario();
+        busca.setCpf(cpf);
+        return getUser(busca);
+    }
 
-    public static boolean postVacina(Vacinas nova) {
+    protected static boolean postVacina(Vacinas nova) {
         if (vacinas.contains(nova)) {
             return false;
         }
         vacinas.add(nova);
         return true;
     }
-
-    public static boolean postVacinacao(Usuario user, Vacinas vacina){
+    protected static Vacinas getVacina(int codigoVacina){
+         for(Vacinas v:vacinas){
+             if(v.getCodigoVacina() == codigoVacina){
+                 return v;
+             }
+         }
+        return   null;
+    }
+    protected static ArrayList<Vacinas> getVacinas(String nome){
+           ArrayList<Vacinas> retorno = new ArrayList<Vacinas>();
+           for(Vacinas d:vacinas){
+               if(d.getNome().contains(nome)){
+                    retorno.add(d);
+               }
+           }
+           return retorno;
+    }
+    protected static boolean postVacinacao(Usuario user, Vacinas vacina){
           Vacinas x = vacinas.get(vacinas.indexOf(vacina));
           if(x.getQuantidade() < 1){
                return false;
@@ -148,6 +173,14 @@ public class Banco {
           vacinacaos.add(nova);
           return  true;
     }
+    protected static boolean postVacinacao(Vacinacao nova ){
+        if(vacinacaos.contains(nova)) {
+            return false;
+        }
+        vacinacaos.add(nova);
+        return  true;
+    }
+
 
     public static ArrayList<Vacinacao> getVacinacaos(Usuario user) {
         ArrayList<Vacinacao> retorno = new ArrayList<Vacinacao>();
@@ -156,9 +189,7 @@ public class Banco {
                 retorno.add(va);
         return retorno;
     }
-    public static  ArrayList<Vacinacao> getVacinacaos(){
-        return vacinacaos;
-    }
+
     public static ArrayList<Usuario> getUsuarios() {
         return usuarios;
     }

@@ -35,7 +35,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/nomePacienteLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -45,7 +45,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/cpfLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content" />
 
             <ListView
-                android:id="@+id/buscaUser"
+                android:id="@+id/vacinasList"
                 android:layout_width="match_parent"
                 android:layout_height="308dp"
                 android:addStatesFromChildren="false"
@@ -78,10 +78,11 @@
                 android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/voltaBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:onClick="voltaBtnClicked"
                 android:text="VOLTAR"
                 android:textStyle="bold" />
 

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             Utils.menssagemAoUsuario("Por favor digite sua senha", "ERRO", this);
             return;
         }
-        Usuario login = loginCorreto(loginTxt.getText().toString(), senhaTxt.getText().toString());
+        Usuario login = Usuario.loginCorreto(loginTxt.getText().toString(), senhaTxt.getText().toString());
         if (login == null) {
             Utils.menssagemAoUsuario("Usuário ou senha incorretos", "Falha no login", this);
         } else {
@@ -66,18 +66,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, menuUsuario.class));
             }
         }
-
     }
 
-    private Usuario loginCorreto(String login, String senha) {
-        ArrayList<Usuario> users = Banco.usuarios();
-        for (Usuario user : users) {
-            if (user.loginCorreto(login, senha)) {
-                return user;
-            }
-        }
-        return null;
-    }
+
 
 
 }

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.engdesoftware.BancoFK.Banco;
 import com.example.engdesoftware.Models.Usuario;
+import com.example.engdesoftware.Utils.UsuarioConectado;
 import com.example.engdesoftware.Utils.Utils;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -39,16 +40,16 @@ public class BuscarUsuario extends AppCompatActivity {
 
     }
     public void buscaUsuarioBtnClicked(View view) {
-        Usuario busca = new Usuario();
-        busca.setCpf(cpfTxt.getText().toString());
-        resultado = Banco.getUser(busca);
+        resultado = Usuario.getUser(cpfTxt.getText().toString());
         if(resultado == null){
             Utils.menssagemAoUsuario("Usuário não encontrado","ERRO",this);
-            cpfTxt.setVisibility(View.INVISIBLE);
+
             nome.setVisibility(View.INVISIBLE);
             nomeTxt.setVisibility(View.INVISIBLE);
             confirma.setVisibility(View.INVISIBLE);
         }else{
+            UsuarioConectado.UsuarioSelecionado = resultado;
+            nomeTxt.setText(resultado.getNome_completo());
             cpfTxt.setVisibility(View.VISIBLE);
             nome.setVisibility(View.VISIBLE);
             nomeTxt.setVisibility(View.VISIBLE);
@@ -57,6 +58,8 @@ public class BuscarUsuario extends AppCompatActivity {
     }
 
     public void confirmaBtnClicked(View view) {
-        startActivity(new Intent(this, HistoricoVacinaADM.class));
+        if(UsuarioConectado.USER.isAdm()){
+            startActivity(new Intent(this, HistoricoVacinas.class));
+        }
     }
 }

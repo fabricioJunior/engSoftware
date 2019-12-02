@@ -2,6 +2,7 @@ package com.example.engdesoftware;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -33,8 +34,10 @@ public class menuUsuario extends AppCompatActivity {
     }
 
     public void historicoDeVacinasBtnClicked(View view) {
+        startActivity(new Intent(this,HistoricoVacinas.class));
     }
 
     public void sairBtnClicked(View view) {
+        finish();
     }
 }

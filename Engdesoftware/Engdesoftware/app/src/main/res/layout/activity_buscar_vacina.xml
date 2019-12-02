@@ -35,38 +35,43 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/codigoVacinaTxt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="NOME"
+                />
 
-            <SearchView
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nomeVacinaTxt"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:hint="NOME" />
 
+            <Button
+                android:id="@+id/buscaVacinaBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="BUSCA"
+                android:onClick="buscaVacinaBtnClicked"
+                />
             <ListView
-                android:id="@+id/buscaUser"
+                android:id="@+id/vacinasList"
                 android:layout_width="match_parent"
-                android:layout_height="308dp"
-                android:addStatesFromChildren="false"
-                android:fadingEdge="vertical"
-                android:footerDividersEnabled="false"
-                android:headerDividersEnabled="false"
-                android:scrollbars="vertical"
-                tools:visibility="visible">
 
-            </ListView>
-
+                android:layout_height="214dp" />
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buscaVoltaBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="VOLTAR"
+                android:onClick="voltaBtnClicked"
                 android:textStyle="bold" />
 
         </LinearLayout>

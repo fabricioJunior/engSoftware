@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.engdesoftware.Utils.Utils;
+
 public class menuADM extends AppCompatActivity {
 
     @Override
@@ -18,7 +20,7 @@ public class menuADM extends AppCompatActivity {
         startActivity(new Intent(menuADM.this, cadastroUsuario.class));
     }
     public  void atualizarUsuarioBtnClick(View view){
-
+        Utils.menssagemAoUsuario("Sem funcionamento","Info",this);
     }
     public void buscaUsuarioBtnClick(View view){
         startActivity(new Intent(menuADM.this,  BuscarUsuario.class));
@@ -37,6 +39,10 @@ public class menuADM extends AppCompatActivity {
     }
 
     public void sairBtnClicked(View view) {
+        finish();
+    }
 
+    public void cadastraVacinaBtnClick(View view) {
+        startActivity(new Intent(menuADM.this,NovaVacinacao.class));
     }
 }

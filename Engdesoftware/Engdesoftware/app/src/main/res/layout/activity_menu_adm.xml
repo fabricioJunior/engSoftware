@@ -82,12 +82,12 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/atualizarVacinaButton"
+                android:id="@+id/cadastraVacinacaoBtn"
                 android:layout_width="277dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Atualizar Vacina"
-                android:onClick="atualizarVacinaBtnClick"
+                android:text="CADASTRAR VACINAÇÃO"
+                android:onClick="cadastraVacinaBtnClick"
                 android:textStyle="bold" />
 
             <Button

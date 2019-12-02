@@ -27,16 +27,17 @@ public class CadastroVacina extends AppCompatActivity {
         try {
             Vacinas nova = new Vacinas();
             nova.setNome(nomeVacinaTxt.getText().toString());
-            nova.setCodigoVacina(Integer.getInteger(codigoVacinaTxt.getText().toString()));
-            nova.setQuantidade(Integer.getInteger(quantidadeTxt.getText().toString()));
-            if (Banco.postVacina(nova)) {
-                Utils.menssagemAoUsuario("Nova vacina cadastrada com sucesso", "Informação", this);
+            nova.setCodigoVacina(Integer.parseInt( codigoVacinaTxt.getText().toString()));
+            nova.setQuantidade(Integer.parseInt(quantidadeTxt.getText().toString()));
+            if (Vacinas.postVacina(nova)) {
+                Utils.menssagemAoUsuario("Nova vacina cadastrada com sucesso", "Informação", this,()->{
+                     finish();
+                });
             } else {
                 Utils.menssagemAoUsuario("Verifique o codigo da vacina e tente novamente.", "Vacina já cadastrada", this);
             }
         } catch (Exception ex) {
-            Utils.menssagemAoUsuario("Erro no cadastro,verifique as informações fornecidas", "ERRO NO CADASTRO", this);
+            Utils.menssagemAoUsuario("Erro no cadastro,verifique as informações digitadas", "ERRO NO CADASTRO", this);
         }
-
     }
 }

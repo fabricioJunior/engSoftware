@@ -1,9 +1,21 @@
 package com.example.engdesoftware.Models;
 
-public class Vacinas {
+import com.example.engdesoftware.BancoFK.Banco;
+
+import java.util.ArrayList;
+
+public class Vacinas extends Banco {
     private int codigoVacina;
     private String nome;
     private int quantidade;
+
+    public static ArrayList<Vacinas> getVacinas(String nome){
+        return  Banco.getVacinas(nome);
+    }
+
+    public static boolean postVacina(Vacinas nova){
+        return Banco.postVacina(nova);
+    }
 
     public int getCodigoVacina() {
         return codigoVacina;
@@ -31,7 +43,7 @@ public class Vacinas {
 
     @Override
     public String toString() {
-        return nome;
+        return nome + " " + codigoVacina;
     }
 
     @Override

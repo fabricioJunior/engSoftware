@@ -12,6 +12,7 @@ import android.widget.SpinnerAdapter;
 import com.example.engdesoftware.BancoFK.Banco;
 import com.example.engdesoftware.Models.Sangue;
 import com.example.engdesoftware.Models.Usuario;
+import com.example.engdesoftware.Utils.Utils;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class cadastroUsuario extends AppCompatActivity {
         loadEstadoCivilBox();
     }
     private void loadSpinner(){
-        ArrayList<Sangue> sangues = Banco.sangues();
+        ArrayList<Sangue> sangues = Sangue.getSangues();
         ArrayAdapter<Sangue> adapter = new ArrayAdapter<Sangue>(this, android.R.layout.simple_spinner_dropdown_item,sangues);
         tipoSangue.setAdapter(adapter);
     }
@@ -80,6 +81,12 @@ public class cadastroUsuario extends AppCompatActivity {
         novo.setCidade(cidadeTxt.getText().toString());
         novo.setRua(ruaTxt.getText().toString());
         novo.setNumero(numeroTxt.getText().toString());
+        if(novo.postUser()){
+            Utils.menssagemAoUsuario("Novo paciente cadastrado com sucesso","INFORMAÇÃO",this);
+            finish();
 
+        } else{
+            Utils.menssagemAoUsuario("Não foi possível cadastra o novo paciente,verifique as informações digitadas","INFORMAÇÃO",this);
+        }
     }
 }
